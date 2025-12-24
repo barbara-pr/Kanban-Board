@@ -1,0 +1,137 @@
+:root{
+    --ToDo: rgb(128, 128, 223);
+    --InProgress: rgb(16, 149, 214);
+    --Done: rgb(142, 190, 113);
+    --Body: rgb(228, 227, 220);
+    --h1: rgb(54, 53, 53);
+    --Card-Field-ToDo: rgb(211, 199, 243);
+    --Card-Field-InProgress: rgb(199, 220, 243);
+    --Card-Field-Done: rgb(217, 243, 199);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Body);
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--h1);
+}
+
+.kanban-board{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.kanban-div{
+    width: 20%;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+.kanban-header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ToDo .kanban-header{
+    background-color: var(--ToDo); 
+}
+ 
+#InProgress .kanban-header{
+    background-color: var(--InProgress);
+}
+ 
+#Done .kanban-header{
+    background-color: var(--Done);
+}
+ 
+#ToDo .cards-field{
+    background-color: var(--Card-Field-ToDo);
+    height: 400px;
+}
+
+#InProgress .cards-field{
+    background-color: var(--Card-Field-InProgress);
+    height: 400px;
+}
+
+#Done .cards-field{
+    background-color: var(--Card-Field-Done);
+    height: 400px;
+}
+
+p{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+} 
+
+.btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 1.4rem;
+    font-weight: medium;
+}
+  
+.task{
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.task.todo{
+    border-left: 6px solid var(--ToDo);
+}
+
+.task.in-progress{
+    border-left: 6px solid var(--InProgress);
+}
+
+.task.done{
+    border-left: 6px solid var(--Done);
+}
+
+.task input{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+
+@media (max-width: 768px){
+    .kanban-board{
+        overflow-x: auto;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .kanban-div{
+        min-width: 80vw; /* coluna grande, confortável */
+        flex-shrink: 0;
+    }
+}

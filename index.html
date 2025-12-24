@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Kanban</title>
+</head>
+<body>
+    <main>
+        <h1>Kanban Board</h1>
+    
+        <div class="kanban-board">
+            <!-- TO DO -->
+            <div class="kanban-div" id="ToDo">
+                <div class="kanban-header">
+                    <p>To Do</p>
+                    <button class="btn" id="btnToDo" data-status="ToDo" aria-label="Adicionar tarefa To Do">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+        
+                <div class="cards-field">
+                    <!-- cards de tarefas entram aqui -->
+                </div>
+            </div>    
+    
+            <!-- IN PROGRESS -->
+            <div class="kanban-div" id="InProgress">
+                <div class="kanban-header">
+                    <p>In Progress</p>
+                    <button class="btn" id="btnInProgress" data-status="InProgress" aria-label="Adicionar tarefa In Progress">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="cards-field">
+                    <!-- cards de tarefas entram aqui -->
+                </div>
+            </div> 
+
+            <!-- DONE -->
+            <div class="kanban-div" id="Done">
+                <div class="kanban-header">
+                    <p>Done</p>
+                    <button class="btn" id="btnDone" data-status="Done" aria-label="Adicionar tarefa Done">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="cards-field">
+                    <!-- cards de tarefas entram aqui -->
+                </div>
+            </div> 
+        </div>
+    </main>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
