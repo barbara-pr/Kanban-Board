@@ -1,3 +1,5 @@
+import { aplicarDrag } from "./dragDrop.js";
+
 export function initTasks() {
     const botoes = document.querySelectorAll(".btn");
 
@@ -34,18 +36,19 @@ function criarInputTask(botao, status) {
             taskDiv.remove();
         }
     });
-}
+} 
 
 function criarTaskFinal(cardsField, texto, status) {
     const task = document.createElement("div");
     task.classList.add("task", classeStatus(status));
-    task.draggable = true;
+    aplicarDrag(task);
 
     const span = document.createElement("span");
     span.textContent = texto;
 
     const btnDelete = document.createElement("button");
-    btnDelete.innerHTML = "🗑";
+    btnDelete.classList.add("btn-delete");
+    btnDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
     btnDelete.addEventListener("click", () => task.remove());
 
     task.append(span, btnDelete);

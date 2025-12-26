@@ -7,6 +7,8 @@
     --Card-Field-ToDo: rgb(211, 199, 243);
     --Card-Field-InProgress: rgb(199, 220, 243);
     --Card-Field-Done: rgb(217, 243, 199);
+    --Delete: #555;
+    --DeleteHover: rgb(119, 35, 35);
 }
 
 *{
@@ -17,6 +19,7 @@
 
 body{
     background-color: var(--Body);
+    min-height: 100vh;
 }
 
 h1{
@@ -32,13 +35,15 @@ h1{
     justify-content: space-around;
     align-items: flex-start;
     margin-top: 20px;
+    overflow-x: auto;
 }
 
 .kanban-div{
-    width: 20%;
+    width: 30%;
+    height: 100%;
     margin-top: 20px;
     border-radius: 10px;
-    overflow: hidden; 
+    overflow-y: auto; 
 }
 
 .kanban-header{
@@ -97,6 +102,9 @@ p{
 }
   
 .task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: white;
     padding: 12px;
     border-radius: 6px;
@@ -122,6 +130,35 @@ p{
     font-size: 1rem;
 }
 
+.btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--Delete);
+    font-size: 1rem;
+}
+  
+.btn-delete:hover {
+    color: var(--DeleteHover);
+}  
+
+.dragging{
+    opacity: 0.5;
+}
+
+*::-webkit-scrollbar{
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: #eaeffa;
+    border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: #a9acad;
+    border-radius: 10px;
+}
 
 @media (max-width: 768px){
     .kanban-board{
